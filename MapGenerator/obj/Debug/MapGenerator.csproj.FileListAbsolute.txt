@@ -1,0 +1,10 @@
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\bin\Debug\MapGenerator.exe.config
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\bin\Debug\MapGenerator.exe
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\bin\Debug\MapGenerator.pdb
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csprojResolveAssemblyReference.cache
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.Form1.resources
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.Properties.Resources.resources
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csproj.GenerateResource.Cache
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csproj.CoreCompileInputs.cache
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.exe
+F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.pdb
