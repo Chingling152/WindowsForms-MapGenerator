@@ -8,3 +8,13 @@ F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator
 F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csproj.CoreCompileInputs.cache
 F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.exe
 F:\o\Jogos\Outros\Meus Projetos\MapGenerator\MapGenerator\obj\Debug\MapGenerator.pdb
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csprojAssemblyReference.cache
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.Form1.resources
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.Properties.Resources.resources
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csproj.GenerateResource.cache
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.csproj.CoreCompileInputs.cache
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.exe
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\obj\Debug\MapGenerator.pdb
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\bin\Debug\MapGenerator.exe.config
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\bin\Debug\MapGenerator.exe
+F:\o\Jogos\Outros\Meus Projetos\Sistemas\MapGenerator\MapGenerator\bin\Debug\MapGenerator.pdb

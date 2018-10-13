@@ -20,41 +20,21 @@ namespace MapGenerator
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Aumenta o valor e muda a cor do botão
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickTileEvent(object sender, EventArgs e){
-            Color col = BackColor;
-            switch (col)
-            {
-                default:
-                    break;
-            }
-        }
 
         private void BtnGerar_Click(object sender, EventArgs e)
         {
+            Clear();
+
             int.TryParse(EixoX.Text, out X);
             int.TryParse(EixoX.Text, out Y);
 
-            if(X <11 && Y < 11) {
+            if(X < 11 && Y < 11) {
             
-                btn = new Button[X,Y];
+                btn = new Tile[X,Y];
 
                 for (int x = 0; x < X; x++) {
                     for (int y = 0; y < Y; y++){
-                        btn[x,y] = new Button
-                        {
-                            Name = $"btn_{x}_{y}",
-                            Text = "",
-                            Width = 23, 
-                            Height = 23,
-                            Margin = new Padding(0,0,0,0),
-                            Location = new Point(48 + (x * 30),156 + (y * 30))
-                        };
-                        btn[x,y].Click += new EventHandler(ClickTileEvent);
+                        btn[x,y] = new Tile(x,y);
                         Controls.Add(btn[x,y]);
                         btn[x, y].BringToFront();
                     }
@@ -68,19 +48,25 @@ namespace MapGenerator
         private void Button1_Click(object sender, EventArgs e)
         {
             if(btn != null) {
-                for (int x = 0; x < X; x++){
-                    for (int y = 0; y < Y; y++){
-                        Controls.Remove(btn[x, y]);                  
-                    }
-                }
-                btn =null;
-                X = 0;
-                Y = 0;
+                Clear();
             }
             else
             {
                 MessageBox.Show("Não há mapa para ser removido");
             }
+        }
+
+        private void Clear() {
+            for (int x = 0; x < X; x++)
+            {
+                for (int y = 0; y < Y; y++)
+                {
+                    Controls.Remove(btn[x, y]);
+                }
+            }
+            btn = null;
+            X = 0;
+            Y = 0;
         }
     }
 }
