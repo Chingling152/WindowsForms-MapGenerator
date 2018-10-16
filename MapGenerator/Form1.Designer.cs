@@ -34,7 +34,7 @@
             this.BtnGerar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.EixoX = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EixoY = new System.Windows.Forms.TextBox();
             this.btn_exp = new System.Windows.Forms.Button();
             this.btn_imp = new System.Windows.Forms.Button();
             this.cbo_bioma = new System.Windows.Forms.ComboBox();
@@ -101,14 +101,14 @@
             this.EixoX.Size = new System.Drawing.Size(76, 33);
             this.EixoX.TabIndex = 0;
             // 
-            // textBox1
+            // EixoY
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(308, 60);
-            this.textBox1.MaxLength = 2;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 33);
-            this.textBox1.TabIndex = 1;
+            this.EixoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.EixoY.Location = new System.Drawing.Point(308, 60);
+            this.EixoY.MaxLength = 2;
+            this.EixoY.Name = "EixoY";
+            this.EixoY.Size = new System.Drawing.Size(76, 33);
+            this.EixoY.TabIndex = 1;
             // 
             // btn_exp
             // 
@@ -164,13 +164,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 580);
+            this.ClientSize = new System.Drawing.Size(400, 580);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbo_bioma);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_imp);
             this.Controls.Add(this.btn_exp);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EixoY);
             this.Controls.Add(this.EixoX);
             this.Controls.Add(this.BtnGerar);
             this.Controls.Add(this.Mapa);
@@ -194,7 +194,7 @@
         private System.Windows.Forms.Button BtnGerar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox EixoX;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox EixoY;
         private System.Windows.Forms.Button btn_exp;
         private System.Windows.Forms.Button btn_imp;
         private System.Windows.Forms.ComboBox cbo_bioma;

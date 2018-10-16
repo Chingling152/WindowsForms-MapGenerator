@@ -27,9 +27,13 @@ namespace MapGenerator
             Clear();
 
             int.TryParse(EixoX.Text, out X);
-            int.TryParse(EixoX.Text, out Y);
+            int.TryParse(EixoY.Text, out Y);
 
-            if(X < 11 && Y < 11) {
+            X = X <= 0 ? 1 : X; EixoX.Text = $"{X}";
+            Y = Y <= 0 ? 1 : Y; EixoY.Text = $"{Y}";
+
+
+            if (X < 11 && Y < 11) {
                 int count = 0;
                 btn = new Tile[X,Y];
                 
@@ -38,12 +42,12 @@ namespace MapGenerator
                         sbyte value = CboValue();
                         btn[x,y] = new Tile(x,y,value);
                         Controls.Add(btn[x,y]);
-                        btn[x, y].BringToFront();
+                        btn[x,y].BringToFront();
                         btn[x,y].TabIndex = count++;
                     }
                 }
                 btn_exp.Enabled = true;
-                btn_imp.Enabled = true;
+                btn_imp.Enabled = false;
             }
             else {
                 MessageBox.Show("Insira um valor menor ou igual à 10");
@@ -100,7 +104,7 @@ namespace MapGenerator
             StreamWriter arquivo = new StreamWriter("Map.txt");
             //le cada linha do vetor de strings
             foreach (string item in lines) {
-                arquivo.WriteLine(item.ToCharArray(),0,X);//converte para um vetor de char
+                arquivo.WriteLine((item+ "-").ToCharArray(),0,X+1);//converte para um vetor de char
             }
             MessageBox.Show("Arquivo Exportado!");
             arquivo.Close();//fecha e salva o arquivo
