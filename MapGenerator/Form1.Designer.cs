@@ -124,7 +124,6 @@
             // 
             // btn_imp
             // 
-            this.btn_imp.Enabled = false;
             this.btn_imp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_imp.Location = new System.Drawing.Point(211, 186);
             this.btn_imp.Name = "btn_imp";

@@ -10,7 +10,7 @@ namespace MapGenerator.Scripts
         /// <summary>
         /// Numeros representado cor e tipo de cada tile.
         /// </summary>
-        public static readonly Dictionary<sbyte, Color> colors = new Dictionary<sbyte, Color>(){
+        public static readonly Dictionary<int, Color> colors = new Dictionary<int, Color>(){
             {0,Color.Black},//Hole
             {1,Color.Green},//Grass
             {2,Color.Khaki},//Sand
@@ -20,12 +20,12 @@ namespace MapGenerator.Scripts
             {6,Color.DimGray},//Concrete
             {7,Color.Silver}//Road
         };
-        private sbyte value;
+        private int value;
 
         /// <summary>
         /// Valor da tile , que é enviado para o arquivo txt
         /// </summary>
-        public sbyte Value {
+        public int Value {
             get {
                 return value;
             }
@@ -41,7 +41,7 @@ namespace MapGenerator.Scripts
         /// <param name="x">Numero da Coluna</param>
         /// <param name="y">Numero da Linha</param>
         /// <param name="value">Tipo padrão a ser instaciado</param>
-        public Tile(int x, int y, sbyte value)
+        public Tile(int x, int y, int value)
         {
             Name = $"btn_{x}_{y}";
             Text = "";
