@@ -9,60 +9,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MapGenerator.Scripts;
 using System.IO;
+using MapGenerator.Scripts.Interfaces;
 
 namespace MapGenerator
 {
     public partial class Form1 : Form
     {
-        Tile[,] btn;
-        int X , Y;
+        private IMapEditor MapEditor;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Creates a new map with the 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGerar_Click(object sender, EventArgs e)
         {
-            Clear();
-            int.TryParse(EixoX.Text, out X);
-            int.TryParse(EixoY.Text, out Y);
-            GerarMapa();
-        }
-        /// <summary>
-        /// Verifica o tamanho do mapa e gera um novo mapa em uma matriz de X e Y
-        /// </summary>
-        private void GerarMapa()
-        {          
-            X = X <= 0 ? 1 : X; 
-            Y = Y <= 0 ? 1 : Y;
+            int.TryParse(EixoX.Text,out int x);
+            int.TryParse(EixoY.Text, out int y);
+            sbyte value = (sbyte)cbo_bioma.SelectedValue;
 
-            EixoX.Text = $"{X}";
-            EixoY.Text = $"{Y}";
+            x = x <= 0 ? 1 : x;
+            y = y <= 0 ? 1 : y;
 
-            if (X < 11 && Y < 11)
-            {
-                int count = 0;
-                btn = new Tile[X, Y];
+            EixoX.Text = $"{x}";
+            EixoY.Text = $"{y}";
 
-                for (int x = 0; x < X; x++)
-                {
-                    for (int y = 0; y < Y; y++)
-                    {
-                        int value = cbo_bioma.SelectedIndex;
-                        btn[x, y] = new Tile(x, y, value);
-                        Controls.Add(btn[x, y]);
-                        btn[x, y].BringToFront();
-                        btn[x, y].TabIndex = count++;
-                    }
-                }
+            if (x < 11 && y < 11){
+                MapEditor = new MapController(x,y,value);
+                CreateTileControls();
             }
-            else
-            {
-                MessageBox.Show("Insira um valor menor ou igual à 10");
+            else { 
+                MessageBox.Show("Insert a value between 1 and 11");
             }
-            
         }
+
+       
 
         private sbyte CboValue(){
             sbyte result = 0;
@@ -87,14 +73,19 @@ namespace MapGenerator
             return result;
         }
 
+        /// <summary>
+        /// Clear Button Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
-            if(btn != null) {
-                Clear();
+            if(MapEditor != null) {
+                ClearMap();
             }
             else
             {
-                MessageBox.Show("Não há mapa para ser removido");
+                MessageBox.Show("There is no map to be removed");
             }
         }
 
@@ -130,7 +121,7 @@ namespace MapGenerator
             }
         }
         /// <summary>
-        /// Importa mapa de um arquivo .txt
+        /// Import Button Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -174,18 +165,31 @@ namespace MapGenerator
             }
 
         }
+        /// <summary>
+        /// Remove all the tiles in the form and resets the IMapEditor class
+        /// </summary>
+        private void ClearMap() {
+            List<Tile> RemovedTiles = MapEditor.GetMap();
 
-        private void Clear() {
-            for (int x = 0; x < X; x++)
-            {
-                for (int y = 0; y < Y; y++)
-                {
-                    Controls.Remove(btn[x, y]);
-                }
+            foreach(Tile item in RemovedTiles) {
+                Controls.Remove(item);
             }
-            btn = null;
-            X = 0;
-            Y = 0;
+
+            MapEditor = null;
+        }
+        /// <summary>
+        /// Add tiles array as buttons in form
+        /// </summary>
+        private void CreateTileControls()
+        {
+            List<Tile> tiles = MapEditor.GetMap();
+            int count = 0;
+            foreach (Tile item in tiles)
+            {
+                Controls.Add(item);
+                item.BringToFront();
+                item.TabIndex = count++;
+            }
         }
     }
 }

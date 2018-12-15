@@ -8,39 +8,33 @@ namespace MapGenerator.Scripts
     public class Tile : Button
     {
         /// <summary>
-        /// Numeros representado cor e tipo de cada tile.
+        /// The value of the current Tile
         /// </summary>
-        public static readonly Dictionary<int, Color> colors = new Dictionary<int, Color>(){
-            {0,Color.Black},//Hole
-            {1,Color.Green},//Grass
-            {2,Color.Khaki},//Sand
-            {3,Color.DarkGreen},//Grass
-            {4,Color.SaddleBrown},//Dirt
-            {5,Color.LightGray},//Gravel
-            {6,Color.DimGray},//Concrete
-            {7,Color.Silver}//Road
-        };
         private int value;
 
         /// <summary>
-        /// Valor da tile , que é enviado para o arquivo txt
+        /// Value that will be sent to the .txt file
         /// </summary>
         public int Value {
             get {
                 return value;
             }
             private set {
-                if(value > colors.Count - 1) value = 0;
+                if(value > MapController.TileTypes.Count - 1)
+                    value = 0;
                 
                 this.value = value;
             }
         }
         /// <summary>
-        /// Construtor vazio e unico do Tile.cs
+        /// Constructor of the Tile  
+        /// Creates a Tile with name based on X and Y and color based on the value number  
+        /// Size : 23x23  
+        /// Position : Based on the X and Y values
         /// </summary>
-        /// <param name="x">Numero da Coluna</param>
-        /// <param name="y">Numero da Linha</param>
-        /// <param name="value">Tipo padrão a ser instaciado</param>
+        /// <param name="x">Defines the name of the tile , the position on matrix</param>
+        /// <param name="y">Defines the name of the tile , the position on matrix</param>
+        /// <param name="value">Defines the color of the tile</param>
         public Tile(int x, int y, int value)
         {
             Name = $"btn_{x}_{y}";
@@ -54,15 +48,15 @@ namespace MapGenerator.Scripts
 
             this.value = value;
 
-            BackColor = colors[Value];
+            BackColor = MapController.TileTypes[Value];
         }
         /// <summary>
-        /// Evento de clique . Aumenta a variavel Value
+        /// Click event increases the value variable (making the tile change its color)
         /// </summary>
         private void ClickTileEvent(object sender, EventArgs e)
         {
             Value ++;
-            this.BackColor = colors[value];
+            this.BackColor = MapController.TileTypes[value];
         }
     }
 }
