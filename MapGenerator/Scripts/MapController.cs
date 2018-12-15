@@ -33,12 +33,14 @@ namespace MapGenerator.Scripts
             GenerateMap(value);
         }
 
-        public MapController(string[] map) {
-            GenerateMap(map);
+        public MapController(Tile[,] map) {
+            Tiles = map;
         }
 
         public void GenerateMap(int defaultValue)
         {
+            Tiles = new Tile[X, Y];
+
             for (int x = 0; x < X; x++)
             {
                 for (int y = 0; y < Y; y++)
@@ -48,14 +50,17 @@ namespace MapGenerator.Scripts
             }
         }
 
-        public void GenerateMap(string[] map)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public List<Tile> GetMap()
         {
-            throw new System.NotImplementedException();
+            List<Tile> Map = new List<Tile>();
+
+            for(int x  = 0; x < X; x++) {
+                for (int y = 0; y < Y; y++){
+                    Map.Add(Tiles[x,y]);
+                }
+            }
+
+            return Map;
         }
     }
 }

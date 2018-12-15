@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MapGenerator.Scripts.Interfaces
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IFileManager
     {
         /// <summary>
-        /// Export the current tilemap as a .txt of strings 
+        /// Export the current TileMap
         /// </summary>
-        void ExportFiles();
+        /// <param name="map"></param>
+        void ExportMap(List<Tile> map);
         /// <summary>
-        /// Convert the strings on the selected .txt file in an array of strings
+        /// Import the current TileMap
         /// </summary>
-        /// <returns>an array of string representing the map</returns>
-        string[] ImportFiles();
+        /// <returns>A Matrix of tiles</returns>
+        Tile[,] ImportMap();
     }
 }

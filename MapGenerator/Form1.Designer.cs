@@ -112,7 +112,6 @@
             // 
             // btn_exp
             // 
-            this.btn_exp.Enabled = false;
             this.btn_exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_exp.Location = new System.Drawing.Point(19, 186);
             this.btn_exp.Name = "btn_exp";
