@@ -86,7 +86,7 @@ namespace MapGenerator
         /// </summary>
         private void ClearMap() {
             if(MapEditor != null) { 
-                List<Tile> RemovedTiles = MapEditor.GetMap();
+                Tile[,] RemovedTiles = MapEditor.GetMap();
 
                 foreach(Tile item in RemovedTiles) {
                     Controls.Remove(item);
@@ -100,7 +100,7 @@ namespace MapGenerator
         /// </summary>
         private void CreateTileControls()
         {
-            List<Tile> tiles = MapEditor.GetMap();
+            Tile[,] tiles = MapEditor.GetMap();
             int count = 0;
             foreach (Tile item in tiles)
             {

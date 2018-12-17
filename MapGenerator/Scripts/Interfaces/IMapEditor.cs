@@ -17,6 +17,6 @@ namespace MapGenerator.Scripts.Interfaces
         /// Used to get the tiles outside the IMapEditor classes
         /// </summary>
         /// <returns>Return a matrix containing all the tiles</returns>
-        List<Tile> GetMap();
+        Tile[,] GetMap();
     }
 }

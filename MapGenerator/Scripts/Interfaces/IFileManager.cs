@@ -11,7 +11,7 @@ namespace MapGenerator.Scripts.Interfaces
         /// Export the current TileMap
         /// </summary>
         /// <param name="map"></param>
-        void ExportMap(List<Tile> map);
+        void ExportMap(Tile[,] map);
         /// <summary>
         /// Import the current TileMap
         /// </summary>

@@ -18,8 +18,22 @@ namespace MapGenerator.Scripts
         /// 
         /// </summary>
         /// <param name="map"></param>
-        public void ExportMap(List<Tile> map)
+        public void ExportMap(Tile[,] map)
         {
+            int X = map.GetLength(0);
+            int Y = map.Length / X ;
+
+            StreamWriter writer = new StreamWriter(path);
+
+            for (int x = 0 ; x < X; x++) {
+                string line = "";
+                for (int y = 0 ; y < Y; y++)
+                {
+                    line += map[x,y].Value;
+                }
+                writer.WriteLine(line);
+            }
+            writer.Close();
 
         }
 
@@ -31,6 +45,7 @@ namespace MapGenerator.Scripts
         {
             int sizeX ,sizeY;
             Tile[,] Map;
+
             try {
                 string[] values = File.ReadAllLines(path);
                 sizeX = values[0].Length;

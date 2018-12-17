@@ -50,17 +50,6 @@ namespace MapGenerator.Scripts
             }
         }
 
-        public List<Tile> GetMap()
-        {
-            List<Tile> Map = new List<Tile>();
-
-            for(int x  = 0; x < X; x++) {
-                for (int y = 0; y < Y; y++){
-                    Map.Add(Tiles[x,y]);
-                }
-            }
-
-            return Map;
-        }
+        public Tile[,] GetMap()=> Tiles;
     }
 }
