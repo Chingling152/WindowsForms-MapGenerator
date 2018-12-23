@@ -1,8 +1,5 @@
 ﻿using MapGenerator.Scripts.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace MapGenerator.Scripts
 {
@@ -15,9 +12,9 @@ namespace MapGenerator.Scripts
         }
 
         /// <summary>
-        /// 
+        /// Creates a .txt file just with the values of each tile
         /// </summary>
-        /// <param name="map"></param>
+        /// <param name="map">The map that will be saved</param>
         public void ExportMap(Tile[,] map)
         {
             int X = map.GetLength(0);
@@ -25,9 +22,10 @@ namespace MapGenerator.Scripts
 
             StreamWriter writer = new StreamWriter(path);
 
-            for (int x = 0 ; x < X; x++) {
-                string line = "";
-                for (int y = 0 ; y < Y; y++)
+            for (int y = 0; y < Y; y++)
+            {
+               string line = "";
+                for (int x = 0; x < X; x++)
                 {
                     line += map[x,y].Value;
                 }
@@ -46,11 +44,9 @@ namespace MapGenerator.Scripts
             int sizeX ,sizeY;
             Tile[,] Map;
 
-            try {
                 string[] values = File.ReadAllLines(path);
                 sizeX = values[0].Length;
                 sizeY = values.Length;
-                System.Windows.Forms.MessageBox.Show($"{sizeX},{sizeY}");
 
                 Map = new Tile[sizeX,sizeY];
 
@@ -62,13 +58,6 @@ namespace MapGenerator.Scripts
                         Map[x,y] = new Tile(x,y,value);
                     }
                 }
-            }catch(Exception exc) {
-                Map = new Tile[1,1]{
-                    { new Tile(0,0,1)}
-                };
-                System.Windows.Forms.MessageBox.Show(exc.ToString());
-                System.Windows.Forms.MessageBox.Show("There is no map to be loaded");
-            }
 
             return Map;
         }

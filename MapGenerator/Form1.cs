@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using MapGenerator.Scripts;
 using MapGenerator.Scripts.Interfaces;
@@ -24,9 +23,13 @@ namespace MapGenerator
         /// <param name="e"></param>
         private void BtnGerar_Click(object sender, EventArgs e)
         {
+            if (MapEditor != null)
+            {
+                ClearMap();
+            }
             int.TryParse(EixoX.Text,out int x);
             int.TryParse(EixoY.Text, out int y);
-            int value = cbo_bioma.SelectedIndex;
+            int value = cbo_bioma.SelectedIndex == -1? 0 : cbo_bioma.SelectedIndex;
 
             x = x <= 0 ? 1 : x;
             y = y <= 0 ? 1 : y;
@@ -60,13 +63,20 @@ namespace MapGenerator
         }
 
         /// <summary>
-        /// Export Click Event
+        /// Export Click Event  
+        /// Creates a .txt file with the values of each tile of the map
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Btn_exp_Click(object sender, EventArgs e)
         {
-            FileManager.ExportMap(MapEditor.GetMap());
+            try { 
+                FileManager.ExportMap(MapEditor.GetMap());
+                MessageBox.Show("Map created successfully");
+            }
+            catch (NullReferenceException exc) {
+                MessageBox.Show("There is no map to be Exported");
+            }
         }
         /// <summary>
         /// Import Click Event  
@@ -78,9 +88,21 @@ namespace MapGenerator
         private void Btn_imp_Click(object sender, EventArgs e)
         {
             ClearMap();
-            MapEditor = new MapController(FileManager.ImportMap());
-            CreateTileControls();
-        }
+            try
+            {
+                MapEditor = new MapController(FileManager.ImportMap());
+            }
+            catch (Exception exc)
+            {
+                MapEditor = new MapController(5, 5, 1);
+                MessageBox.Show("There is no map to be loaded");
+            }
+            finally
+            {
+                CreateTileControls();
+
+            }
+            }
         /// <summary>
         /// Remove all the tiles in the form and resets the IMapEditor class
         /// </summary>

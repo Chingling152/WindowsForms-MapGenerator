@@ -29,7 +29,7 @@ namespace MapGenerator.Scripts
         public MapController(int X,int Y,int value) {
             this.X = X;
             this.Y = Y;
-
+            
             GenerateMap(value);
         }
 

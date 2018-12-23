@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MapGenerator.Scripts.Interfaces
+﻿namespace MapGenerator.Scripts.Interfaces
 {
     /// <summary>
     /// 

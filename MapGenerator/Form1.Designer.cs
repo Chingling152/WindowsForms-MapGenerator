@@ -47,9 +47,9 @@
             this.Label_x.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Label_x.Location = new System.Drawing.Point(12, 21);
             this.Label_x.Name = "Label_x";
-            this.Label_x.Size = new System.Drawing.Size(289, 29);
+            this.Label_x.Size = new System.Drawing.Size(108, 29);
             this.Label_x.TabIndex = 0;
-            this.Label_x.Text = "Insira Tamanho do Eixo X";
+            this.Label_x.Text = "Columns";
             // 
             // Label_Y
             // 
@@ -57,9 +57,9 @@
             this.Label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Label_Y.Location = new System.Drawing.Point(12, 64);
             this.Label_Y.Name = "Label_Y";
-            this.Label_Y.Size = new System.Drawing.Size(288, 29);
+            this.Label_Y.Size = new System.Drawing.Size(74, 29);
             this.Label_Y.TabIndex = 1;
-            this.Label_Y.Text = "Insira Tamanho do Eixo Y";
+            this.Label_Y.Text = "Rows";
             // 
             // Mapa
             // 
@@ -77,7 +77,7 @@
             this.BtnGerar.Name = "BtnGerar";
             this.BtnGerar.Size = new System.Drawing.Size(174, 37);
             this.BtnGerar.TabIndex = 4;
-            this.BtnGerar.Text = "Gerar Mapa";
+            this.BtnGerar.Text = "Generate Map";
             this.BtnGerar.UseVisualStyleBackColor = true;
             this.BtnGerar.Click += new System.EventHandler(this.BtnGerar_Click);
             // 
@@ -88,26 +88,26 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 37);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Limpar Mapa";
+            this.button1.Text = "Clear Map";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // EixoX
             // 
             this.EixoX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.EixoX.Location = new System.Drawing.Point(308, 21);
+            this.EixoX.Location = new System.Drawing.Point(126, 22);
             this.EixoX.MaxLength = 2;
             this.EixoX.Name = "EixoX";
-            this.EixoX.Size = new System.Drawing.Size(76, 33);
+            this.EixoX.Size = new System.Drawing.Size(258, 33);
             this.EixoX.TabIndex = 0;
             // 
             // EixoY
             // 
             this.EixoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.EixoY.Location = new System.Drawing.Point(308, 60);
+            this.EixoY.Location = new System.Drawing.Point(126, 61);
             this.EixoY.MaxLength = 2;
             this.EixoY.Name = "EixoY";
-            this.EixoY.Size = new System.Drawing.Size(76, 33);
+            this.EixoY.Size = new System.Drawing.Size(258, 33);
             this.EixoY.TabIndex = 1;
             // 
             // btn_exp
@@ -117,7 +117,7 @@
             this.btn_exp.Name = "btn_exp";
             this.btn_exp.Size = new System.Drawing.Size(174, 37);
             this.btn_exp.TabIndex = 6;
-            this.btn_exp.Text = "Exportar";
+            this.btn_exp.Text = "Export Map";
             this.btn_exp.UseVisualStyleBackColor = true;
             this.btn_exp.Click += new System.EventHandler(this.Btn_exp_Click);
             // 
@@ -128,24 +128,25 @@
             this.btn_imp.Name = "btn_imp";
             this.btn_imp.Size = new System.Drawing.Size(174, 37);
             this.btn_imp.TabIndex = 7;
-            this.btn_imp.Text = "Importar";
+            this.btn_imp.Text = "Import Map";
             this.btn_imp.UseVisualStyleBackColor = true;
             this.btn_imp.Click += new System.EventHandler(this.Btn_imp_Click);
             // 
             // cbo_bioma
             // 
             this.cbo_bioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_bioma.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbo_bioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.88235F);
             this.cbo_bioma.FormattingEnabled = true;
             this.cbo_bioma.Items.AddRange(new object[] {
-            "Nenhum",
-            "Floresta",
-            "Deserto",
-            "Selva",
-            "Pantano"});
-            this.cbo_bioma.Location = new System.Drawing.Point(102, 100);
+            "None",
+            "Forest",
+            "Desert",
+            "Jungle",
+            "Swamp"});
+            this.cbo_bioma.Location = new System.Drawing.Point(126, 101);
             this.cbo_bioma.Name = "cbo_bioma";
-            this.cbo_bioma.Size = new System.Drawing.Size(283, 37);
+            this.cbo_bioma.Size = new System.Drawing.Size(259, 37);
             this.cbo_bioma.TabIndex = 8;
             // 
             // label1
@@ -154,9 +155,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(14, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 29);
+            this.label1.Size = new System.Drawing.Size(83, 29);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Bioma";
+            this.label1.Text = "Biome";
             // 
             // Form1
             // 
@@ -178,7 +179,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Gerar Mapa";
+            this.Text = "Map Generator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
